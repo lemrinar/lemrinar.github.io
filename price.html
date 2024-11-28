@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-row">
+                <a href="index.html" class="logo">LEMRINAR</a>
+                <span class="menu-btn">&#9776;</span>
+                <nav>
+                    <ul class="main-menu">
+                        <li class="link"><a href="about.html" >About</a></li>
+                        <li class="link"><a href="price.html">Price list</a></li>
+                        <li class="link"><a href="portfolio.html">Portfolio</a></li>
+                        <li class="link"><a href="contact.html">Contacts</a></li>
+                    </ul>
+                    <a href="tel:+79103562212" class="phone">+7(910) 356-22-12</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+
+
+        <div class="container">
+
+            <h2 class="sentence">Prices are valid for...</h2>
+            <block class="first-row">
+                <div id="d" class="counter"></div>
+                <div id="h" class="counter"></div>
+                <div id="m" class="counter"></div>
+                <div id="s" class="counter"></div>
+            </block>
+            <block class="second-row">
+                <div class="text">days</div>
+                <div class="text">hours</div>
+                <div class="text">minutes</div>
+                <div class="text">seconds</div>
+            </block>
+
+            <div class="price-table">
+                <table>
+                    <tbody>
+                        <tr class="table-title">
+                            <td>Type of work</td>
+                            <td>Price</td>
+                            <td>Deadlines</td>
+                        </tr>
+                        <tr class="row-1">
+                            <td>Development in Python</td>
+                            <td>from 5000 rub</td>
+                            <td>from 1 week</td>
+                        </tr>
+                        <tr class="row-2">
+                            <td>Development in C++</td>
+                            <td>from 7000 rub</td>
+                            <td>from 1 week</td>
+                        </tr>
+                        <tr class="row-3">
+                            <td>Development in C#</td>
+                            <td>from 6000 rub</td>
+                            <td>from 1 week</td>
+                        </tr>
+                        <tr class="row-4">
+                            <td>HTML/CSS layout</td>
+                            <td>from 8000 rub</td>
+                            <td>from 1 week</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="contact.html" class="order-button"><b>ORDER</b></a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-1">
+                    <ul class="options">
+                        <li>&#9733; software development</li>
+                        <li>&#9733; creating websites</li>
+                        <li>&#9733; testing programs</li>
+                    </ul>
+                </div>
+                <div class="footer-2">
+                    <ul>
+                        <li><a href=" https://t.me/lemrinar" target="_blank"><img src="img/telegram.svg"
+                                    alt="telegram"></a></li>
+                        <li><a href="https://vk.com/leemkaa" target="_blank"><img src="img/vk.svg" alt="vkontakte"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+
+        // присвоение значений переменным из html
+        let btn = document.querySelector('.menu-btn'); 
+        let menuMob = document.querySelector('nav');
+
+        // функция события клика на кнопку
+        btn.addEventListener('click', function() {
+            menuMob.classList.toggle('open'); // переключение класса open
+            if (this.innerHTML == 'x') { // переключение кнопки меню
+                this.innerHTML = '&#9776';
+            }
+            else {
+                this.innerHTML = "x"
+            }
+        })
+
+        // отсчет времени до нового года
+        setInterval(function () {
+            let timeNow = new Date(); // настоящие дата и время
+            let newYear = new Date(2025, 0, 1, 0, 0, 0); // дата и время нового года
+            let counter = (newYear - timeNow); // разность между датами
+            let seconds = Math.floor((counter / 1000) % 60); // подсчет секунд
+            let minutes = Math.floor((counter / 1000 / 60) % 60); // подсчет минут
+            let hours = Math.floor((counter / 1000 / 60 / 60) % 24); // подсчет часов
+            let days = Math.floor(counter / 1000 / 60 / 60 / 24); // подсчет дней
+            // добавление "0" для однозначных чисел
+            if (seconds < 10) {
+                seconds = '0' + seconds;
+            }
+            if (minutes < 10) {
+                minutes = '0' + minutes;
+            }
+            if (hours < 10) {
+                hours = '0' + hours;
+            }
+            document.getElementById('d').innerHTML = days; // вывод дней
+            document.getElementById('h').innerHTML = hours; // вывод часов
+            document.getElementById('m').innerHTML = minutes; // вывод минут
+            document.getElementById('s').innerHTML = seconds; // вывод секунд
+        }, 1000);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+   
+   .window{
+        padding: 10px 20px;
+        color: rgb(115, 50, 64);
+        background-color: rgb(206, 99, 123);
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px;
+        width: auto;
+        height: auto;
+    }
+    .modal-window {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    a{
+        padding: 5px 10px;
+        background-color: rgb(164, 86, 103);
+        color: white;
+        text-decoration: none;
+        margin: 5px;
+        text-align: center;
+        display: inline-flex;
+    }
+
+    .close {
+        background-color: rgb(123, 58, 72);
+    }
+
+    p {
+        color: white;
+        margin: 10px 5px;
+    }
+
+    .open:hover, .close:hover {
+        background-color: #000000;
+    }
+    span {
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+
+   <a href="portfolio.html" class="back">&#8592;</a>
+   <p>Создать html-страницу с кнопкой Открыть и модальным
+    окном. На модальном окне должен быть текст и кнопка Закрыть.
+    Изначально модальное окно не отображается. При клике на
+    кнопку Открыть появляется модальное окно, на кнопку Закрыть –
+    исчезает.
+     </p>
+
+    <a href="#" class="open">open</a><br>
+    <div class="modal-window">
+        <div class="window">
+            <span>Hello from Modal Window!</span>
+            <a href="#" class="close">close</a>
+        </div>
+
+    </div>
+    
+   
+
+    <script>
+
+        // присвоение значений переменным из html
+        let open = document.querySelector(".open");
+        let close = document.querySelector(".close");
+        let wind = document.querySelector("div");
+        let bodyColor = document.querySelector("body");
+        wind.style.display = "none";
+
+        // событие клика на кнопку
+        open.addEventListener('click', function(){
+            if (wind.style.display == "none"){
+                wind.style.display = "inline-flex"; // вывод модального окна
+                open.style.display = "none"; // исчезновение кнопки
+                bodyColor.style.backgroundColor = "#1d1c1c";
+            }
+        })
+        // событие клика на кнопку
+        close.addEventListener('click', function(){
+            if (wind.style.display == "inline-flex"){
+                wind.style.display = "none"; // исчезновение модального окна
+                open.style.display = "inline-flex"; // вывод кнопки
+                bodyColor.style.backgroundColor = "#282828";
+            }
+        })
+
+
+    </script>
+    
+</body>
+</html>

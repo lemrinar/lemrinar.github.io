@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .task {
+            margin: 20px 0;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="z11">
+        <a href="portfolio.html" class="back">&#8592;</a>
+
+        <div class="task">Hаписать мини-игру “Угадай число” с пятью попытками
+            число рандомное, алертом выводим Да или Нет
+            если 5 раз не угадано - выводим сообщение, что попытки закончились.
+            </div>
+
+        <h2>Угадай число</h2>
+        <p>Загадано число от 1 до 10</p>
+        <p>У вас есть 5 попыток, чтобы отгадать</p>
+    
+        <div id="buttons">
+            <button onclick="guessNumber(1)">1</button>
+            <button onclick="guessNumber(2)">2</button>
+            <button onclick="guessNumber(3)">3</button>
+            <button onclick="guessNumber(4)">4</button>
+            <button onclick="guessNumber(5)">5</button>
+            <button onclick="guessNumber(6)">6</button>
+            <button onclick="guessNumber(7)">7</button>
+            <button onclick="guessNumber(8)">8</button>
+            <button onclick="guessNumber(9)">9</button>
+            <button onclick="guessNumber(10)">10</button>
+        </div>
+    
+    </div>
+   
+
+    <script>
+        let randNum; 
+        let counter = 0;
+
+        // Создание функции для начала новой игры
+        function NewGame() {
+            randNum = Math.floor(Math.random() * 10) + 1; // Выбор рандомного числа
+            console.log(randNum); // Вывод числа в консоль
+        }
+
+        // Создание функции для отгадывания числа
+        function guessNumber(num) {
+            if (randNum == num) {
+                alert('Вы угадали число');
+                counter = 5;
+                }
+            else {
+                counter++;
+                if (counter < 5) {
+                    alert('Неправильное число');
+                } 
+                else {
+                    alert('Ваши попытки закончились');
+                }
+            }
+        }
+
+    NewGame();
+
+    </script>
+</body>
+</html>

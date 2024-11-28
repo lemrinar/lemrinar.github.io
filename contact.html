@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-row">
+                <a href="index.html" class="logo">LEMRINAR</a>
+                <span class="menu-btn">&#9776;</span>
+                <nav>
+                    <ul class="main-menu">
+                        <li class="link"><a href="about.html" >About</a></li>
+                        <li class="link"><a href="price.html">Price list</a></li>
+                        <li class="link"><a href="portfolio.html">Portfolio</a></li>
+                        <li class="link"><a href="contact.html">Contacts</a></li>
+                    </ul>
+                    <a href="tel:+79103562212" class="phone">+7(910) 356-22-12</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <form class="contact-info">
+                <h2>CONTACT US</h2>
+                <input type="text" id="name" name="userName" placeholder="Name" class="info">
+                <br>
+                <input type="tel" id="phone" name="userPhone" placeholder="Phone number" class="info">
+                <br>
+                <input type="email" id="email" name="userEmail" placeholder="Email" class="info">
+                <br>
+                <a href="#" class="contact-button"><b>SEND</b></a>
+            </form>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-1">
+                    <ul class="options">
+                        <li>&#9733; software development</li>
+                        <li>&#9733; creating websites</li>
+                        <li>&#9733; testing programs</li>
+                    </ul>
+                </div>
+                <div class="footer-2">
+                    <ul>
+                        <li><a href=" https://t.me/lemrinar" target="_blank"><img src="img/telegram.svg"
+                                    alt="telegram"></a></li>
+                        <li><a href="https://vk.com/leemkaa" target="_blank"><img src="img/vk.svg" alt="vkontakte"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        let btn = document.querySelector('.contact-button'); // присвоение значений переменным из html
+        // событие клика на кнопку
+        btn.addEventListener('click', function () {
+             // присвоение значений переменным из html
+            let name = document.querySelector('#name').textContent;
+            let tel = document.querySelector('#phone').textContent;
+            let email = document.querySelector('#email').textContent;
+            let regexp = /^\d+$/; // валидация, ввод только цифр
+            if (!regexp.test(tel)) {
+                alert('Telephone number is incorrect.'); // вывод информации рользователю о несоответствии формата данных
+            }
+            // очищение полей
+            name = '';
+            tel = '';
+            email = '';
+
+        })
+
+        // присвоение значений переменным из html
+        let btn2 = document.querySelector('.menu-btn'); 
+        let menuMob = document.querySelector('nav');
+
+        // функция события клика на кнопку
+        btn2.addEventListener('click', function() {
+            menuMob.classList.toggle('open'); // переключение класса open
+            if (this.innerHTML == 'x') { // переключение кнопки меню
+                this.innerHTML = '&#9776';
+            }
+            else {
+                this.innerHTML = "x"
+            }
+        })
+    </script>
+
+</body>
+
+</html>

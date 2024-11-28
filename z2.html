@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body>
+
+    <div class="z2">
+        <a href="portfolio.html" class="back">&#8592;</a>
+        <div><br>Создать html-страницу с деревом вложенных директорий.
+            При клике на элемент списка, он должен сворачиваться или
+            разворачиваться. </div>        
+        <!-- создание списка -->
+        <ul class="list-z2">
+            <li class="title" id="title1">This PC
+                <ul>
+                    <li class="title">Local Disc(C:)
+                        <ul>
+                            <li>Program Files</li>
+                            <li>Users</li>
+                            <li>Windows</li>
+                        </ul>
+                    </li>
+                    <li class="title">Local Disc(D:)
+                        <ul>
+                            <li>New Folder 1</li>
+                            <li>New Folder 2</li>
+                            <li>New Folder 3</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+
+   
+
+    <script>
+        // создание события 'click'
+        document.addEventListener('click', function (e) {
+            // поиск элементов списка с классом 'title'
+            if (e.target.className == 'title') {
+                // создание переменной, содержащей в себе первый дочерний элемент класса 'title'
+                let invisibleText = e.target.firstElementChild;
+                // скрытие и вывод элементов списка
+                if (invisibleText.style.display == "none") {
+                    invisibleText.style.display = "block"; 
+                }
+                else {
+                    invisibleText.style.display = "none";
+                }
+            }
+
+        })
+    </script>
+
+    
+
+</body>
+
+    
+
+</html>

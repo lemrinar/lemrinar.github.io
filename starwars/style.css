@@ -1,0 +1,99 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sofadi+One&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-size: 1.2rem;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+header {
+    background-color: #030303;
+    padding: 2rem 1rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.d-flex {
+    display: flex;
+    gap: 24px;
+    margin: auto;
+    max-width: 80%;
+}
+i,
+.crawl {
+    font-size: 14px;
+}
+
+.btn {
+cursor: pointer;
+}
+.btn:hover{
+    color: gold;
+}
+
+.back {
+    color: black;
+    padding: 5px, 0;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.back:hover {
+    color: purple;
+}
+
+.person-button {
+    cursor: pointer;
+}
+
+.person-button:hover {
+    color: purple;
+}
+
+#persons {
+    margin:20px auto;
+    max-width: 50%;
+    text-align: center;
+    columns: 2;
+}
+
+p, .person {
+    font-size: 12px;
+}
+
+span {
+    font-size: 13px;
+}
+
+.starships-show {
+    padding: 15px;
+    display: flex;
+    width: 250px;
+    background-color: purple;
+    color: white;
+    cursor: pointer;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.starships-show-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#starships {
+    max-width: 80%;
+    margin: auto;
+    columns: 3;
+}
+
+h5 {
+    margin: 0;
+}
+
